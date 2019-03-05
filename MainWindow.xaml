@@ -1,0 +1,48 @@
+﻿<Window x:Class="WpfApplication3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication3"
+        mc:Ignorable="d"
+        Title="Login" Height="300" Width="300" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Name="_winDrag" MouseLeftButtonDown="_winDrag_MouseLeftButtonDown_1">
+    <Border BorderThickness="3" BorderBrush="#FF7388A8">
+        <Grid TextElement.FontFamily="Segoe UI SemiBold">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="34*" />
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="34*"/>
+                <RowDefinition Height="37*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="1" Background="#134187">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="Images/log.png" Height="48"/>
+                    <Label FontFamily="MRT_Thameen Bold" Foreground="White" FontSize="24" Content="فرم ورود" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5,5,5,11"/>                    
+                </StackPanel>
+            </Border>
+
+            <Border>
+                <Button Style="{StaticResource MiniButton}" Content="x" Width="30" HorizontalAlignment="Right" Name="_btnClose" Click="_btnClose_Click"/>
+            </Border>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <ComboBox Name="_cmbType" Width="130" HorizontalContentAlignment="Center" FontFamily="Segoe UI SemiBold">
+                    <ComboBoxItem Content="انتخاب کنید"/>
+                    <ComboBoxItem Content="مدیر"/>
+                    <ComboBoxItem Content="کاربر"/>
+                </ComboBox>
+                <Label FontSize="14" Width="80" Content=" :نوع کاربر"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBox  HorizontalContentAlignment="Center"  Name="_txtUsername" Style="{StaticResource TextBoxStyle}" Width="130"/>
+                <Label FontSize="14" Width="80" Content=" :نام کاربری"/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                <PasswordBox  HorizontalContentAlignment="Center" Name="_txtPassword" Width="130" Style="{DynamicResource PasswordBoxStyle}"/>
+                <Label FontSize="14" Width="80" Content=" :کلمه عبور"/>
+            </StackPanel>
+            <Button Name="_btnLogin" Style="{DynamicResource ButtonStyle1}" FontFamily="Yu Gothic" Grid.Row="5" Content="ورود" Height="32" Width="100" Click="_btnLogin_Click"/>
+        </Grid>
+    </Border>
+</Window>

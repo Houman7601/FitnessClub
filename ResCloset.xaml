@@ -1,0 +1,56 @@
+﻿<Window x:Class="WpfApplication3.ResCloset"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication3"
+        mc:Ignorable="d"
+        Title="ResCloset" ResizeMode="NoResize" Height="360" WindowStartupLocation="CenterScreen" Width="300" AllowsTransparency="True" WindowStyle="None" Loaded="Window_Loaded">
+    <Border BorderThickness="3" BorderBrush="#FF7388A8">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="269*"/>
+            </Grid.RowDefinitions>
+
+            <Border BorderThickness="0,0,0,2" BorderBrush="#FF7388A8">
+                <Button Width="40" Content="x" Name="_btnClose" HorizontalAlignment="Right" Style="{StaticResource MiniButton}" Height="28" VerticalAlignment="Top" Click="_btnClose_Click"/>
+            </Border>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Background="#134187">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="Images/closet.png" Height="58"/>
+                        <Label FontSize="26" Content="رزرو کمد " FontFamily="MRT_Thameen Bold" Foreground="White" Padding="5,11,5,5"/>
+                    </StackPanel>
+                </Border>
+
+                <StackPanel Grid.Row="1" HorizontalAlignment="Center"  Orientation="Horizontal">
+                    
+                    <ComboBox HorizontalContentAlignment="Center" Height="30" Width="170" Name="_cmbRCloset"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold"   FlowDirection="RightToLeft" Text="شماره کمد: " Height="30" FontSize="15"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+                    <TextBox HorizontalContentAlignment="Center" FlowDirection="RightToLeft" Name="_txtresDate" Width="170" Height="30" FontSize="13" Style="{StaticResource TextBoxStyle}" Margin="0,14,0,15"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold" Width="65"  Text=" :تاریخ رزرو" Height="30" FontSize="15" Margin="0,14,0,15"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
+                    <TextBox HorizontalContentAlignment="Center" FlowDirection="RightToLeft" Name="_txtDuration" Width="170" Height="30" FontSize="13" Style="{StaticResource TextBoxStyle}" Margin="0,14,0,15"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold" Width="65" Text=" :مدت" Height="30" FontSize="15" Margin="0,14,0,15"/>
+                </StackPanel>
+                <Button x:Name="_btnSabt" Style="{StaticResource ButtonStyle1}" Width="110" Height="35" FontSize="16" FontFamily="Segoe UI SemiBold"  Content="ثبت" Grid.Row="4" Click="_btnSabt_Click"/>
+
+
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>

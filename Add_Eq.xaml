@@ -1,0 +1,106 @@
+﻿<Window x:Class="WpfApplication3.Add_Eq"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication3"
+        mc:Ignorable="d"
+        Title="Add_Eq" Height="354" Width="844" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None" Name="drag" MouseLeftButtonDown="drag_MouseLeftButtonDown">
+    <Border BorderThickness="3" BorderBrush="#FF7388A8">
+        <Grid TextElement.FontFamily="Segoe UI SemiBold">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="67*"/>
+                <RowDefinition Height="297*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="2" Margin="10,0,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="17,0,0,0">
+                    <TextBox HorizontalContentAlignment="Center" FlowDirection="RightToLeft" Name="_txtID" Width="170" Height="30" FontSize="13" Style="{StaticResource TextBoxStyle}" Margin="0,14,0,15" PreviewKeyDown="_txtID_PreviewKeyDown"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold"  Text=" :کد دستگاه" Height="30" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal" Margin="17,0,0,0">
+
+                    <TextBox HorizontalContentAlignment="Center" Name="_txtName" Width="170" Height="30" FontSize="13" FlowDirection="RightToLeft" Style="{StaticResource TextBoxStyle}" />
+                    <TextBlock FontFamily="Segoe UI SemiBold"  Text=" :نام دستگاه" Height="30" FontSize="15" Margin="0,15"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal" Grid.Row="2" Margin="17,0,0,0">
+                    <TextBox HorizontalContentAlignment="Center" Name="_txtType" Width="170" Height="30" FontSize="13"  Style="{StaticResource TextBoxStyle}"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold" Text=" :نوع دستگاه" Height="30" FontSize="15"/>
+                </StackPanel>
+
+               
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+                    <TextBox HorizontalContentAlignment="Center" Name="_txtNumber" Width="170" Height="30" FontSize="13" Style="{StaticResource TextBoxStyle}" PreviewKeyDown="_txtNumber_PreviewKeyDown"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold"  Text=" :تعداد" Height="30" FontSize="15"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                    <TextBox HorizontalContentAlignment="Center" Name="_txtBuyDate" Width="170" Height="30" FontSize="13"  Style="{StaticResource TextBoxStyle}"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold" Text=" :تاریخ خرید" Height="30" FontSize="15"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal">
+                    <TextBox HorizontalContentAlignment="Center" Name="_txtCompany" Width="170" Height="30" FontSize="13"  Style="{StaticResource TextBoxStyle}"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold"  Text=" :شرکت فروشنده" Height="30" FontSize="15"/>
+                </StackPanel>
+
+               
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <TextBox HorizontalContentAlignment="Center" Name="_txtCost" Width="170" Height="30" FontSize="13" Style="{StaticResource TextBoxStyle}"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold"   FlowDirection="RightToLeft" Text="قیمت: " Height="30" FontSize="15"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="0" Grid.Row="1"  Orientation="Horizontal">
+                    <TextBox HorizontalContentAlignment="Center" Name="_txtCondition" Width="170" Height="30" FontSize="13" FlowDirection="RightToLeft" Style="{StaticResource TextBoxStyle}"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold"   FlowDirection="RightToLeft" Text="وضعیت: " Height="30" FontSize="15"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="0" Grid.Row="2"  Orientation="Horizontal">
+                    <TextBox HorizontalContentAlignment="Center" Name="_txtWeight" Width="170" Height="30" FontSize="13" Style="{StaticResource TextBoxStyle}" PreviewKeyDown="_txtWeight_PreviewKeyDown"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold" FlowDirection="RightToLeft" Text="وزن: " Height="30" FontSize="15"/>
+                </StackPanel>
+
+          
+               
+
+                <Button Name="_btnSabt" Style="{StaticResource ButtonStyle1}" Grid.Column="1" Width="150" Height="35" FontSize="16" FontFamily="Segoe UI SemiBold"  Content="ثبت" Grid.Row="4" Click="_btnSabt_Click"/>
+
+
+
+
+
+
+            </Grid>
+            <Border Grid.Row="1" Background="#134187">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="Images/chest.png" Height="58"/>
+                    <Label FontSize="26" Content="ورود مشخصات دستگاه جدید" FontFamily="MRT_Thameen Bold" Foreground="White" Padding="5,11,5,5"/>
+                </StackPanel>
+            </Border>
+            <Border BorderThickness="0,0,0,2" BorderBrush="#FF7388A8" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="661*"/>
+                        <ColumnDefinition Width="39*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="2" BorderThickness="1" Content="x" FontSize="14" Name="_btnClose" Click="_btnClose_Click" Style="{DynamicResource MiniButton}"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

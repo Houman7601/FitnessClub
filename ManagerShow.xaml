@@ -1,0 +1,85 @@
+﻿<Window x:Class="WpfApplication3.ManagerShow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication3"
+        mc:Ignorable="d"
+        Title="ManagerShow" Height="380" Width="600" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None" Name="drag" MouseLeftButtonDown="drag_MouseLeftButtonDown">
+    <Border BorderThickness="3" BorderBrush="#FF7388A8">
+        <Grid TextElement.FontFamily="Segoe UI SemiBold">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="67*"/>
+                <RowDefinition Height="297*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="2" Margin="10,0,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="17,0,0,0">
+                    <TextBox IsEnabled="False" Text="{Binding Manager_edit.FirstName}" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" Name="_txtFName" Width="170" Height="30" FontSize="13" Style="{StaticResource TextBoxStyle}" Margin="0,14,0,15"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold" Width="50" Text=" :نام" Height="30" FontSize="15" Margin="0,14,0,15"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal" Margin="17,0,0,0">
+
+                    <TextBox IsEnabled="False" Text="{Binding Manager_edit.LastName}" HorizontalContentAlignment="Center" Name="_txtLName" Width="170" Height="30" FontSize="13" FlowDirection="RightToLeft" Style="{StaticResource TextBoxStyle}" />
+                    <TextBlock FontFamily="Segoe UI SemiBold"  Text=" :نام خانوادگی" Height="30" FontSize="15" Margin="0,15"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="17,0,0,0">
+                    <TextBox IsEnabled="False" Text="{Binding Manager_edit.Melli}" HorizontalContentAlignment="Center" Name="_txtMelli" Width="170" Height="30" FontSize="13"  Style="{StaticResource TextBoxStyle}"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold" Width="57" Text=" :کد ملی" Height="30" FontSize="15"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="17,0,0,0">
+                    <TextBox IsEnabled="False" Text="{Binding Manager_edit.Mobile}" HorizontalContentAlignment="Center" Name="_txtMobile" Width="170" Height="30" FontSize="13" Style="{StaticResource TextBoxStyle}"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold" Width="57" Text=" :موبایل" Height="30" FontSize="15"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" Margin="17,0,0,0">
+                    <TextBox IsEnabled="False" Text="{Binding Manager_edit.Birthdate}" HorizontalContentAlignment="Center" x:Name="_txtBirthDate" Width="170" Height="30" FontSize="13"  Style="{StaticResource TextBoxStyle}" Margin="0,14,0,15"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold"  Text=" :تاریخ تولد" Height="30" FontSize="15"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" Margin="17,0,0,0">
+                    <TextBox IsEnabled="False" HorizontalContentAlignment="Center" x:Name="_txtUsername" Width="170" Height="30" FontSize="13"  Style="{StaticResource TextBoxStyle}" Margin="0,14,0,15"/>
+                    <TextBlock FontFamily="Segoe UI SemiBold"  Text=" :نام کاربری" Height="30" FontSize="15"/>
+                </StackPanel>
+
+                <Button IsEnabled="False" Grid.ColumnSpan="2"  Name="_btnSabt" Style="{StaticResource ButtonStyle1}" Width="150" Height="35" FontSize="16" FontFamily="Segoe UI SemiBold"  Content="ثبت" Grid.Row="4" Click="_btnSabt_Click"/>
+                <CheckBox Grid.Row="3" Content="ویرایش" HorizontalAlignment="Center" Name="_chkEdit" FontSize="14" VerticalAlignment="Center" Margin="0,0,40,0" Checked="_chkEdit_Checked" Unchecked="_chkEdit_Unchecked"/>
+
+
+
+
+
+
+            </Grid>
+            <Border Grid.Row="1" Background="#134187">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="Images/managerr.png" Height="58"/>
+                    <Label FontSize="26" Content="ویرایش مشخصات مدیر" FontFamily="MRT_Thameen Bold" Foreground="White" Padding="5,11,5,5"/>
+                </StackPanel>
+            </Border>
+            <Border BorderThickness="0,0,0,2" BorderBrush="#FF7388A8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="661*"/>
+                        <ColumnDefinition Width="39*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="2" BorderThickness="1" Content="x" FontSize="14" Name="_btnClose" Click="_btnClose_Click" Style="{DynamicResource MiniButton}"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
